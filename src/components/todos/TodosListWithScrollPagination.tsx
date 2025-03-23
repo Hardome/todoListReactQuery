@@ -3,33 +3,9 @@ import cn from 'classnames';
 import {useTodoListWithScrollPagination} from '@hooks'
 
 import {Todo} from './Todo'
-import { useCallback, useRef } from 'react';
-
-const useIntersectLoading = (onIntersect: () => void) => {
-  const unsubscribe = useRef(() => {});
- 
-   return useCallback((el: HTMLDivElement | null) => {
-     const observer = new IntersectionObserver(entries => {
-       entries.forEach(intersection => {
-         if (intersection.isIntersecting) {
-           onIntersect();
-         }
-       });
-     });
- 
-     if (el) {
-       observer.observe(el);
-       unsubscribe.current = () => observer.disconnect();
-     } else {
-       unsubscribe.current();
-     }
-   }, [onIntersect]);
-}
 
 export const TodosListWithScrollPagination = () => {
-  const {todos, isPlaceholderData, hasNextPage, isFetchingNextPage, fetchNextPage} = useTodoListWithScrollPagination();
-
-  const cursorRef = useIntersectLoading(() => fetchNextPage());
+  const {todos, isPlaceholderData, hasNextPage, isFetchingNextPage, cursorRef} = useTodoListWithScrollPagination();
 
   return (
     <div className={cn('flex flex-col gap-4', {'opacity-50': isPlaceholderData})}>
