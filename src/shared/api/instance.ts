@@ -1,6 +1,6 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/'
+const API_URL = 'http://localhost:3000/';
 
 const baseQuery = axios.create({
   baseURL: API_URL,
@@ -9,7 +9,7 @@ const baseQuery = axios.create({
     'Content-Type': 'application/json',
     Accept: 'application/json',
   },
-})
+});
 
 export const API = {
   post: <T>(url: string, body?: unknown) =>
@@ -17,9 +17,9 @@ export const API = {
       .post(url, body)
       .then(({data}) => data as T)
       .catch((error) => {
-        console.error('API POST Error:', error)
+        console.error('API POST Error:', error);
 
-        throw error
+        throw error;
       }),
 
   get: <T>(url: string, config?: {signal?: AbortSignal}) =>
@@ -27,8 +27,8 @@ export const API = {
       .get(url, {...config})
       .then(({data}) => data as T)
       .catch((error) => {
-        console.error('API GET Error:', error)
+        console.error('API GET Error:', error);
 
-        throw error
+        throw error;
       }),
-}
+};

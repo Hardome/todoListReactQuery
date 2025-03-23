@@ -1,9 +1,9 @@
-import cn from 'classnames'
+import cn from 'classnames';
 
-import {TodoDto} from '@api'
+import {TodoDto} from '@api';
 
 export const Todo = ({todo}: {todo: TodoDto}) => {
-  const {id, title, isDone} = todo
+  const {id, title, isDone} = todo;
 
   return (
     <div
@@ -14,5 +14,5 @@ export const Todo = ({todo}: {todo: TodoDto}) => {
       <span>{id}</span>
       <span>{title}</span>
     </div>
-  )
-}
+  );
+};

@@ -1,11 +1,12 @@
 import cn from 'classnames';
 
-import {useTodoListWithPagination} from '@hooks'
+import {useTodoListWithPagination} from '@hooks';
 
-import {Todo} from './Todo'
+import {Todo} from './Todo';
 
 export const TodosListWithPagination = () => {
-  const {todos, pages, isPending, setPage, isPlaceholderData} = useTodoListWithPagination()
+  const {todos, pages, isPending, setPage, isPlaceholderData} =
+    useTodoListWithPagination();
 
   /* при использовании placeholderData isPending будет всегда false*/
   // if (isPending) {
@@ -13,7 +14,9 @@ export const TodosListWithPagination = () => {
   // }
 
   return (
-    <div className={cn('flex flex-col gap-4', {'opacity-50': isPlaceholderData})}>
+    <div
+      className={cn('flex flex-col gap-4', {'opacity-50': isPlaceholderData})}
+    >
       <h3 className={'font-bold'}>{'TodosListWithPagination'}</h3>
       <div>{todos?.map((todo) => <Todo key={todo.id} todo={todo} />)}</div>
       <div className={'flex gap-2'}>
@@ -31,5 +34,5 @@ export const TodosListWithPagination = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,2 +1,2 @@
-export * from './todos'
-export {API} from './instance'
+export * from './todos';
+export {API} from './instance';
