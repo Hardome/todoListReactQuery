@@ -1,6 +1,8 @@
 import cn from 'classnames'
 
-export const Todo = ({todo}) => {
+import {TodoDto} from '@api'
+
+export const Todo = ({todo}: {todo: TodoDto}) => {
   const {id, title, isDone} = todo
 
   return (

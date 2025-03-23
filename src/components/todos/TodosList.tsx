@@ -1,7 +1,8 @@
 import {useQuery} from '@tanstack/react-query'
 
-import {API} from '../../shared/api/instance'
-import {todosApi, TodoDto} from '../../shared/api'
+import {API, todosApi, TodoDto} from '@api'
+// import { useTodoList } from '@hooks/useTodoList'
+
 import {Todo} from './Todo'
 
 export const TodosList = () => {
@@ -14,14 +15,16 @@ export const TodosList = () => {
     },
   })
 
+  // const {todos, isPending} = useTodoList();
+
   if (isPending) {
     return <div>Loading...</div>
   }
 
   return (
     <div className={'flex flex-col'}>
-      <h3 className={'font-bold'}>TodosList</h3>
-      <div>{todos?.map((todo) => <Todo todo={todo} />)}</div>
+      <h3 className={'font-bold'}>{'TodosList'}</h3>
+      <div>{todos?.map((todo) => <Todo key={todo.id} todo={todo} />)}</div>
     </div>
   )
 }
