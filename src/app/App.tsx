@@ -1,6 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router'
 import {TodosList} from '@components/Todos/TodosList'
 import {TodosListWithPagination} from '@components/Todos/TodosListWithPagination'
+import { TodosListWithScrollPagination } from '@components/Todos/TodosListWithScrollPagination'
 import {AppWrapper} from './AppWrapper.tsx'
 
 export const App = () => {
@@ -9,12 +10,8 @@ export const App = () => {
       <AppWrapper>
         <Routes>
           <Route path="/" element={<TodosList />} />
-        </Routes>
-        <Routes>
           <Route path="/withPagination" element={<TodosListWithPagination />} />
-        </Routes>
-        <Routes>
-          <Route path="/withScrollPagination" element={<TodosList />} />
+          <Route path="/withScrollPagination" element={<TodosListWithScrollPagination />} />
         </Routes>
       </AppWrapper>
     </BrowserRouter>
