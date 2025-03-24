@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import {useTodoListWithScrollPagination} from '@hooks';
+import {useTodoListWithScrollPagination} from './hooks';
 
 import {Todo} from './Todo';
 
@@ -10,7 +10,9 @@ export const TodosListWithScrollPagination = () => {
 
   return (
     <div
-      className={cn('flex flex-col gap-4', {'opacity-50': isPlaceholderData})}
+      className={cn('flex flex-col gap-4 pb-80', {
+        'opacity-50': isPlaceholderData,
+      })}
     >
       <h3 className={'font-bold'}>{'TodosListWithPagination'}</h3>
       <div>{todos?.map((todo) => <Todo key={todo.id} todo={todo} />)}</div>

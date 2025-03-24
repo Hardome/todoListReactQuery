@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router';
 import {AppWrapper} from './AppWrapper.tsx';
 import {
   CreateTodos,
+  TestPage,
   TodosList,
   TodosListWithPagination,
   TodosListWithScrollPagination,
@@ -19,6 +20,7 @@ export const App = () => {
             element={<TodosListWithScrollPagination />}
           />
           <Route path="/create" element={<CreateTodos />} />
+          <Route path="/test" element={<TestPage />} />
         </Routes>
       </AppWrapper>
     </BrowserRouter>

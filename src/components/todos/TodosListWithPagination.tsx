@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import {useTodoListWithPagination} from '@hooks';
+import {useTodoListWithPagination} from './hooks';
 
 import {Todo} from './Todo';
 

@@ -3,7 +3,8 @@ import {
   keepPreviousData,
   queryOptions,
 } from '@tanstack/react-query';
-import {API} from './instance';
+import {API} from '.';
+import {delay} from './delay';
 
 export type TodoDto = {
   id: number;
@@ -14,10 +15,10 @@ export type TodoDto = {
 type PaginatedData<T> = {
   data: T;
   first: number;
-  items: number;
   last: number;
-  next: number | null;
+  items: number;
   pages: number;
+  next: number | null;
   prev: number | null;
 };
 
@@ -39,7 +40,7 @@ export const todosApi = {
     return queryOptions({
       queryKey: [todosApi.baseKey, 'list', {page}],
       queryFn: async ({signal}) => {
-        await new Promise((res) => setTimeout(res, 500));
+        await delay();
 
         return API.get<PaginatedData<TodoDto[]>>(
           `/todos?_page=${page}&_per_page=10`,
@@ -57,7 +58,7 @@ export const todosApi = {
     return infiniteQueryOptions({
       queryKey: [todosApi.baseKey, 'list', 'scroll'],
       queryFn: async ({signal, pageParam}) => {
-        await new Promise((res) => setTimeout(res, 300));
+        await delay(300);
 
         return API.get<PaginatedData<TodoDto[]>>(
           `/todos?_page=${pageParam}&_per_page=20`,
@@ -77,29 +78,18 @@ export const todosApi = {
   createTodo: async ({title}: {title: TodoDto['title']}) => {
     const [lastTodo] = await API.get<TodoDto[]>('/todos?_sort=-id&_limit=1');
 
-    await new Promise((res) => setTimeout(res, 300));
+    await delay(300);
 
-    // const a = await API.post<TodoDto>('/todos', {
-    //   id: lastTodo?.id + 1,
-    //   isDone: false,
-    //   title,
-    // });
-
-    const a = await fetch('http://localhost:3000/todos', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        id: lastTodo?.id + 1,
-        isDone: false,
-        title,
-      })
-    })
-
-    console.log('После API.post', a);
-
-    // debugger; 
+    return API.post<TodoDto>('/todos', {
+      id: Number(lastTodo?.id) + 1,
+      isDone: false,
+      title,
+    });
   },
+
+  deleteTodo: async ({id}: {id: TodoDto['id']}) => {
+    await delay(300);
+
+    return API.delete<TodoDto>(`/todos/${id}`);
+  }
 };

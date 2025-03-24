@@ -1,5 +1,5 @@
 import {useInfiniteQuery} from '@tanstack/react-query';
-import {todosApi} from '../api';
+import {todosApi} from '@api/todos';
 import {useCallback, useRef} from 'react';
 
 const useIntersectLoading = (onIntersect: () => void) => {

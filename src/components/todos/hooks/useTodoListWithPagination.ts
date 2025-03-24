@@ -1,5 +1,5 @@
 import {useQuery} from '@tanstack/react-query';
-import {todosApi} from '../api';
+import {todosApi} from '@api/todos';
 import {useState} from 'react';
 
 export function useTodoListWithPagination() {

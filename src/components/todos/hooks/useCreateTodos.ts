@@ -1,11 +1,12 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
-import {API, TodoDto, todosApi} from '../api';
+import {todosApi, TodoDto} from '@api/todos';
+import {API} from '@api';
 
 export function useCreateTodos() {
   const queryClient = useQueryClient();
 
   const {data} = useQuery({
-    queryKey: [todosApi.baseKey, 'list'],
+    queryKey: [todosApi.baseKey, 'list', 'last'],
     queryFn: ({signal}) => {
       return API.get<TodoDto[]>('/todos?_sort=-id&_limit=5', {
         signal,
@@ -22,15 +23,17 @@ export function useCreateTodos() {
 
   const createTodoMutation = useMutation({
     mutationFn: todosApi.createTodo,
-    // async onSettled() {
-      // await queryClient.invalidateQueries({
-      //   queryKey: [todosApi.baseKey, 'list'],
-      // });
-    // },
+    async onSettled() {
+      await queryClient.invalidateQueries({
+        queryKey: [todosApi.baseKey, 'list', 'last'],
+      });
+    },
+    mutationKey: [todosApi.baseKey],
   });
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); /* отключает дефолтное поведение (не будет перезагрузки старницы) */
+
     const formData = new FormData(e.currentTarget);
     const title = String(formData.get('title') ?? '');
 
@@ -39,8 +42,6 @@ export function useCreateTodos() {
     });
 
     e.currentTarget.reset();
-
-    console.log('asd')
   };
 
   return {isPending: createTodoMutation.isPending, todos: data, onSubmit};

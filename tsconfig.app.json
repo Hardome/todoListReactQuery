@@ -29,10 +29,7 @@
       "@components/*": ["src/components/*"],
 
       "@api": ["src/shared/api/index.ts"],
-      "@api/*": ["src/shared/api/*"],
-
-      "@hooks/*": ["src/shared/hooks/*"],
-      "@hooks": ["src/shared/hooks/index.ts"]
+      "@api/*": ["src/shared/api/*"]
     },
     "baseUrl": "."
   },

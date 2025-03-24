@@ -1,7 +1,7 @@
 import {useQuery} from '@tanstack/react-query';
 
-import {API, todosApi, TodoDto} from '@api';
-// import { useTodoList } from '@hooks/useTodoList'
+import {API} from '@api';
+import {TodoDto, todosApi} from '@api/todos';
 
 import {Todo} from './Todo';
 

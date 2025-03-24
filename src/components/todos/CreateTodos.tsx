@@ -1,7 +1,6 @@
 import cn from 'classnames';
 
-import {useCreateTodos} from '@hooks';
-
+import {useCreateTodos} from './hooks';
 import {Todo} from './Todo';
 
 export const CreateTodos = () => {
@@ -17,7 +16,7 @@ export const CreateTodos = () => {
         />
         <button
           disabled={isPending}
-          type={"submit"}
+          type={'submit'}
           className={'rounded p-2 border border-teal-500'}
         >
           {'Создать'}

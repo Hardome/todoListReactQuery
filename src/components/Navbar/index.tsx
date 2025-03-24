@@ -7,6 +7,7 @@ export const Navbar = () => {
       <Link to="/withPagination">C пагинацией</Link>
       <Link to="/withScrollPagination">С бесконечной пагинацией на scroll</Link>
       <Link to="/create">Создание</Link>
+      <Link to="/test">Тестовая страница</Link>
     </nav>
   );
 };
