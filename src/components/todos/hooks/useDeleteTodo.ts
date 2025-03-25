@@ -6,9 +6,9 @@ export const useDeleteTodo = () => {
 
   const deleteTodoMutation = useMutation({
     mutationFn: todosApi.deleteTodo,
-    async onSettled() {
+    async onSuccess() {
       await queryClient.invalidateQueries({
-        queryKey: [todosApi.baseKey]
+        queryKey: [todosApi.baseKey] /* инвалидируем все списки тудушек по основному ключу */
       });
     }
   });
