@@ -11,13 +11,16 @@ const baseQuery = axios.create({
   },
 });
 
+type TApiParams = {
+  method?: Method;
+  body?: unknown;
+  config?: AxiosRequestConfig;
+};
+
 export const API = {
-  request: async <T>(
-    url: string,
-    method: Method = 'GET',
-    body?: unknown,
-    config?: AxiosRequestConfig
-  ): Promise<T> => {
+  request: async <T>(url: string, params: TApiParams = {}): Promise<T> => {
+    const {method = 'GET', body, config} = params;
+
     try {
       const {data} = await baseQuery({
         method,

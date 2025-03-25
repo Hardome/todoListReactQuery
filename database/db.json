@@ -1,11 +1,6 @@
 {
   "todos": [
     {
-      "id": "1",
-      "title": "Купить молоко",
-      "isDone": false
-    },
-    {
       "id": "2",
       "title": "Позвонить маме",
       "isDone": true
@@ -21,31 +16,6 @@
       "isDone": true
     },
     {
-      "id": "10",
-      "title": "Посетить врача",
-      "isDone": true
-    },
-    {
-      "id": "11",
-      "title": "Купить подарок другу",
-      "isDone": false
-    },
-    {
-      "id": "12",
-      "title": "Проверить почту",
-      "isDone": true
-    },
-    {
-      "id": "13",
-      "title": "Обновить резюме",
-      "isDone": false
-    },
-    {
-      "id": "17",
-      "title": "Заказать продукты",
-      "isDone": false
-    },
-    {
       "id": "18",
       "title": "Пройти онлайн-курс",
       "isDone": true
@@ -59,21 +29,6 @@
       "id": "21",
       "title": "Починить кран",
       "isDone": false
-    },
-    {
-      "id": "22",
-      "title": "Написать статью",
-      "isDone": true
-    },
-    {
-      "id": "23",
-      "title": "Купить новую мебель",
-      "isDone": false
-    },
-    {
-      "id": "24",
-      "title": "Создать презентацию",
-      "isDone": true
     },
     {
       "id": "25",
@@ -104,21 +59,6 @@
       "id": "30",
       "title": "Сходить на выставку",
       "isDone": true
-    },
-    {
-      "id": "31",
-      "title": "Почистить компьютер",
-      "isDone": false
-    },
-    {
-      "id": "32",
-      "title": "Нарисовать картину",
-      "isDone": true
-    },
-    {
-      "id": "33",
-      "title": "Посадить дерево",
-      "isDone": false
     },
     {
       "id": "34",
@@ -191,11 +131,6 @@
       "isDone": false
     },
     {
-      "id": "48",
-      "title": "Заказать пиццу",
-      "isDone": true
-    },
-    {
       "id": "49",
       "title": "Написать стихи",
       "isDone": false
@@ -209,16 +144,6 @@
       "id": "76",
       "title": "Нарисовать схему",
       "isDone": true
-    },
-    {
-      "id": "81",
-      "title": "Провести тренировку",
-      "isDone": false
-    },
-    {
-      "id": "85",
-      "isDone": false,
-      "title": "1233"
     },
     {
       "id": "86",
