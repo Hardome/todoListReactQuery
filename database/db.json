@@ -21,16 +21,6 @@
       "isDone": true
     },
     {
-      "id": "6",
-      "title": "Написать отчет",
-      "isDone": true
-    },
-    {
-      "id": "8",
-      "title": "Приготовить ужин",
-      "isDone": true
-    },
-    {
       "id": "10",
       "title": "Посетить врача",
       "isDone": true
@@ -49,21 +39,6 @@
       "id": "13",
       "title": "Обновить резюме",
       "isDone": false
-    },
-    {
-      "id": "14",
-      "title": "Забронировать билеты",
-      "isDone": true
-    },
-    {
-      "id": "15",
-      "title": "Полить цветы",
-      "isDone": false
-    },
-    {
-      "id": "16",
-      "title": "Поздравить коллегу",
-      "isDone": true
     },
     {
       "id": "17",
@@ -231,153 +206,8 @@
       "isDone": true
     },
     {
-      "id": "51",
-      "title": "Купить цветы",
-      "isDone": false
-    },
-    {
-      "id": "52",
-      "title": "Сделать уборку",
-      "isDone": true
-    },
-    {
-      "id": "53",
-      "title": "Позвонить другу",
-      "isDone": false
-    },
-    {
-      "id": "54",
-      "title": "Поиграть в шахматы",
-      "isDone": true
-    },
-    {
-      "id": "55",
-      "title": "Написать план",
-      "isDone": false
-    },
-    {
-      "id": "56",
-      "title": "Купить биткоин",
-      "isDone": true
-    },
-    {
-      "id": "57",
-      "title": "Сварить суп",
-      "isDone": false
-    },
-    {
-      "id": "58",
-      "title": "Провести эксперимент",
-      "isDone": true
-    },
-    {
-      "id": "59",
-      "title": "Поменять пароль",
-      "isDone": false
-    },
-    {
-      "id": "60",
-      "title": "Сходить в музей",
-      "isDone": true
-    },
-    {
-      "id": "61",
-      "title": "Купить инструменты",
-      "isDone": false
-    },
-    {
-      "id": "62",
-      "title": "Начать проект",
-      "isDone": true
-    },
-    {
-      "id": "63",
-      "title": "Позвонить в поддержку",
-      "isDone": false
-    },
-    {
-      "id": "64",
-      "title": "Сделать скриншот",
-      "isDone": true
-    },
-    {
-      "id": "65",
-      "title": "Проверить задания",
-      "isDone": false
-    },
-    {
-      "id": "66",
-      "title": "Заказать такси",
-      "isDone": true
-    },
-    {
-      "id": "67",
-      "title": "Почистить обувь",
-      "isDone": false
-    },
-    {
-      "id": "68",
-      "title": "Создать аккаунт",
-      "isDone": true
-    },
-    {
-      "id": "69",
-      "title": "Купить телефон",
-      "isDone": false
-    },
-    {
-      "id": "70",
-      "title": "Написать рецензию",
-      "isDone": true
-    },
-    {
-      "id": "71",
-      "title": "Помыть окна",
-      "isDone": false
-    },
-    {
-      "id": "72",
-      "title": "Сделать апгрейд ПК",
-      "isDone": true
-    },
-    {
-      "id": "73",
-      "title": "Позвать гостей",
-      "isDone": false
-    },
-    {
-      "id": "74",
-      "title": "Закончить книгу",
-      "isDone": true
-    },
-    {
-      "id": "75",
-      "title": "Купить коврик",
-      "isDone": false
-    },
-    {
       "id": "76",
       "title": "Нарисовать схему",
-      "isDone": true
-    },
-    {
-      "id": "77",
-      "title": "Проверить сроки",
-      "isDone": false
-    },
-    {
-      "id": "78",
-      "title": "Заказать кофе",
-      "isDone": true
-    },
-    {
-      "id": "79",
-      "title": "Почистить клавиатуру",
-      "isDone": false
-    },
-    {
-      "id": "80",
-      "title": "Сделать фондю",
       "isDone": true
     },
     {
@@ -386,27 +216,12 @@
       "isDone": false
     },
     {
-      "id": "82",
-      "title": "Обновить ПО",
-      "isDone": true
-    },
-    {
-      "id": "83",
-      "title": "Купить наушники",
-      "isDone": false
-    },
-    {
-      "id": "84",
-      "title": "Написать тест",
-      "isDone": true
-    },
-    {
-      "id": 85,
+      "id": "85",
       "isDone": false,
       "title": "1233"
     },
     {
-      "id": 86,
+      "id": "86",
       "isDone": false,
       "title": "23423"
     }

@@ -25,6 +25,17 @@ type PaginatedData<T> = {
 export const todosApi = {
   baseKey: 'todos',
 
+  getAllTodosQueryOptions: () => {
+    return queryOptions({
+      queryKey: [todosApi.baseKey],
+      queryFn: ({signal}) => {
+        return API.get<TodoDto[]>('/todos', {
+          signal,
+        });
+      },
+    });
+  },
+
   getTodosQueryOptions: () => {
     return queryOptions({
       queryKey: [todosApi.baseKey, 'list'],
@@ -72,6 +83,24 @@ export const todosApi = {
       initialPageParam: 1,
       getNextPageParam: (result) => result.next,
       select: (result) => result.pages.flatMap((page) => page.data),
+    });
+  },
+
+  lastTodosQueryOptions: () => {
+    return queryOptions({
+      queryKey: [todosApi.baseKey, 'list', 'last'],
+      queryFn: ({signal}) => {
+        return API.get<TodoDto[]>('/todos?_sort=-id&_limit=5', {
+          signal,
+        });
+      },
+      select: (result) =>
+        result.map((result) => {
+          return {
+            ...result,
+            id: Number(result.id),
+          };
+        }),
     });
   },
 

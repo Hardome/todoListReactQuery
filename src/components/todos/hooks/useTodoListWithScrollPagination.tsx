@@ -34,9 +34,7 @@ export function useTodoListWithScrollPagination() {
     hasNextPage,
     isFetchingNextPage,
     fetchNextPage,
-  } = useInfiniteQuery({
-    ...todosApi.getTodosWithInfinityPaginationQueryOptions(),
-  });
+  } = useInfiniteQuery(todosApi.getTodosWithInfinityPaginationQueryOptions());
 
   const cursorRef = useIntersectLoading(() => fetchNextPage());
 
