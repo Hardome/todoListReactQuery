@@ -1,14 +1,9 @@
 {
   "todos": [
     {
-      "id": "2",
-      "title": "Позвонить маме",
-      "isDone": true
-    },
-    {
       "id": "3",
       "title": "Заплатить за интернет",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "4",
@@ -41,33 +36,8 @@
       "isDone": true
     },
     {
-      "id": "27",
-      "title": "Поменять лампочку",
-      "isDone": false
-    },
-    {
-      "id": "28",
-      "title": "Записать подкаст",
-      "isDone": true
-    },
-    {
       "id": "29",
       "title": "Купить книги",
-      "isDone": false
-    },
-    {
-      "id": "30",
-      "title": "Сходить на выставку",
-      "isDone": true
-    },
-    {
-      "id": "34",
-      "title": "Сделать резервную копию",
-      "isDone": true
-    },
-    {
-      "id": "35",
-      "title": "Купить подарок себе",
       "isDone": false
     },
     {

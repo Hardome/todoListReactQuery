@@ -14,7 +14,7 @@ export const Todo = ({
   const {id, title, isDone} = todo;
 
   const {onDelete, isPending} = useDeleteTodo(listQueryKey);
-  const onUpdate = useUpdateTodo()
+  const onUpdate = useUpdateTodo();
 
   return (
     <div
