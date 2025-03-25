@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
   server: {
     watch: {
-      ignored: ['**/database/db.json'] /* исключаем БДшку из watching, а то иначе будет перезагружать vite */
-    }
-  }
+      ignored: [
+        '**/database/db.json',
+      ] /* исключаем БДшку из watching, а то иначе будет перезагружать vite */,
+    },
+  },
 });

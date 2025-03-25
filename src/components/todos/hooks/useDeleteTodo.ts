@@ -8,10 +8,15 @@ export const useDeleteTodo = () => {
     mutationFn: todosApi.deleteTodo,
     async onSuccess() {
       await queryClient.invalidateQueries({
-        queryKey: [todosApi.baseKey] /* инвалидируем все списки тудушек по основному ключу */
+        queryKey: [
+          todosApi.baseKey,
+        ] /* инвалидируем все списки тудушек по основному ключу */,
       });
-    }
+    },
   });
 
-  return {isPending: deleteTodoMutation.isPending, onDelete: deleteTodoMutation.mutate};
-}
+  return {
+    isPending: deleteTodoMutation.isPending,
+    onDelete: deleteTodoMutation.mutate,
+  };
+};

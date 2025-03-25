@@ -15,7 +15,7 @@ export const API = {
   post: <T>(url: string, body?: unknown) =>
     baseQuery
       .post(url, body)
-      .then(({ data }) => data as T)
+      .then(({data}) => data as T)
       .catch((error) => {
         console.error('API POST Error:', error);
 
@@ -25,17 +25,17 @@ export const API = {
   delete: <T>(url: string) =>
     baseQuery
       .delete(url)
-      .then(({ data }) => data as T)
+      .then(({data}) => data as T)
       .catch((error) => {
         console.error('API POST Error:', error);
 
         throw error;
       }),
 
-  get: <T>(url: string, config?: { signal?: AbortSignal }) =>
+  get: <T>(url: string, config?: {signal?: AbortSignal}) =>
     baseQuery
-      .get(url, { ...config })
-      .then(({ data }) => data as T)
+      .get(url, {...config})
+      .then(({data}) => data as T)
       .catch((error) => {
         console.error('API GET Error:', error);
 

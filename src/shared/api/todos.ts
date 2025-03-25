@@ -91,5 +91,5 @@ export const todosApi = {
     await delay(300);
 
     return API.delete<TodoDto>(`/todos/${id}`);
-  }
+  },
 };
