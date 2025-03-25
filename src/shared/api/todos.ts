@@ -29,7 +29,7 @@ export const todosApi = {
     return queryOptions({
       queryKey: [todosApi.baseKey],
       queryFn: ({signal}) => {
-        return API.get<TodoDto[]>('/todos', {
+        return API.request<TodoDto[]>('/todos', 'GET', {
           signal,
         });
       },
@@ -40,7 +40,7 @@ export const todosApi = {
     return queryOptions({
       queryKey: [todosApi.baseKey, 'list'],
       queryFn: ({signal}) => {
-        return API.get<TodoDto[]>('/todos', {
+        return API.request<TodoDto[]>('/todos', 'GET', {
           signal,
         });
       },
@@ -49,15 +49,14 @@ export const todosApi = {
 
   getTodosWithPaginationQueryOptions: ({page}: {page: number}) => {
     return queryOptions({
-      queryKey: [todosApi.baseKey, 'list', {page}],
+      queryKey: [todosApi.baseKey, 'list', page],
       queryFn: async ({signal}) => {
         await delay();
 
-        return API.get<PaginatedData<TodoDto[]>>(
+        return API.request<PaginatedData<TodoDto[]>>(
           `/todos?_page=${page}&_per_page=10`,
-          {
-            signal,
-          }
+          'GET',
+          {signal}
         );
       },
       placeholderData:
@@ -71,11 +70,10 @@ export const todosApi = {
       queryFn: async ({signal, pageParam}) => {
         await delay(300);
 
-        return API.get<PaginatedData<TodoDto[]>>(
+        return API.request<PaginatedData<TodoDto[]>>(
           `/todos?_page=${pageParam}&_per_page=20`,
-          {
-            signal,
-          }
+          'GET',
+          {signal}
         );
       },
       placeholderData:
@@ -90,7 +88,7 @@ export const todosApi = {
     return queryOptions({
       queryKey: [todosApi.baseKey, 'list', 'last'],
       queryFn: ({signal}) => {
-        return API.get<TodoDto[]>('/todos?_sort=-id&_limit=5', {
+        return API.request<TodoDto[]>('/todos?_sort=-id&_limit=5', 'GET', {
           signal,
         });
       },
@@ -105,11 +103,11 @@ export const todosApi = {
   },
 
   createTodo: async ({title}: {title: TodoDto['title']}) => {
-    const [lastTodo] = await API.get<TodoDto[]>('/todos?_sort=-id&_limit=1');
+    const [lastTodo] = await API.request<TodoDto[]>('/todos?_sort=-id&_limit=1');
 
     await delay(300);
 
-    return API.post<TodoDto>('/todos', {
+    return API.request<TodoDto>('/todos', 'POST', {
       id: Number(lastTodo?.id) + 1,
       isDone: false,
       title,
@@ -119,6 +117,12 @@ export const todosApi = {
   deleteTodo: async ({id}: {id: TodoDto['id']}) => {
     await delay(300);
 
-    return API.delete<TodoDto>(`/todos/${id}`);
+    return API.request<TodoDto>(`/todos/${id}`, 'DELETE');
+  },
+
+  updateTodo: async ({id}: {id: TodoDto['id']}) => {
+    await delay(300);
+
+    return API.request<TodoDto>(`/todos/${id}`, 'PATCH');
   },
 };

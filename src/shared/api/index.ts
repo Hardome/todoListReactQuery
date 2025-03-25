@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, {Method, AxiosRequestConfig} from 'axios';
 
 const API_URL = 'http://localhost:3000/';
 
@@ -12,33 +12,25 @@ const baseQuery = axios.create({
 });
 
 export const API = {
-  post: <T>(url: string, body?: unknown) =>
-    baseQuery
-      .post(url, body)
-      .then(({data}) => data as T)
-      .catch((error) => {
-        console.error('API POST Error:', error);
+  request: async <T>(
+    url: string,
+    method: Method = 'GET',
+    body?: unknown,
+    config?: AxiosRequestConfig
+  ): Promise<T> => {
+    try {
+      const {data} = await baseQuery({
+        method,
+        url,
+        data: body,
+        ...config,
+      });
 
-        throw error;
-      }),
+      return data as T;
+    } catch (error) {
+      console.error(`API ${method} Error:`, error);
 
-  delete: <T>(url: string) =>
-    baseQuery
-      .delete(url)
-      .then(({data}) => data as T)
-      .catch((error) => {
-        console.error('API POST Error:', error);
-
-        throw error;
-      }),
-
-  get: <T>(url: string, config?: {signal?: AbortSignal}) =>
-    baseQuery
-      .get(url, {...config})
-      .then(({data}) => data as T)
-      .catch((error) => {
-        console.error('API GET Error:', error);
-
-        throw error;
-      }),
+      throw error;
+    }
+  },
 };
